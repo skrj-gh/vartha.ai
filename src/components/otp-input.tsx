@@ -45,13 +45,13 @@ const OTPInput = () => {
   };
 
   return (
-    <div className="w-full max-w-md p-4">
-      <div className="mb-4 text-gray-600">
+    <div className="pt-[20px]">
+      <div className="mb-[12px]">
         OTP sent to {phoneNumber}. 
-        <a href='/join-waitlist' className="text-gray-700 ml-1 cursor-pointer underline">Edit number here</a>
+        <a href='/join-waitlist' className="ml-1 cursor-pointer underline">Edit number here</a>
       </div>
       
-      <div className="flex gap-4 mb-4">
+      <div className="flex gap-[8px] mb-[16px]">
         {otp.map((digit, index) => (
           <input
             key={index}
@@ -63,17 +63,17 @@ const OTPInput = () => {
             value={digit}
             onChange={(e) => handleChange(index, e.target.value)}
             onKeyDown={(e) => handleKeyDown(index, e)}
-            className="w-12 h-12 text-2xl text-center border-b-2 border-gray-300 focus:border-gray-900 focus:outline-none"
+            className="w-12 h-[56px] text-[32px] text-center border-b-2 border-gray-300 focus:border-black focus:outline-none"
           />
         ))}
       </div>
 
       {timer===0 ? 
-      <div className="text-gray-500 text-sm underline cursor-pointer" onClick={handleResend}>
+      <div className="opacity-70 text-[12px] underline cursor-pointer" onClick={handleResend}>
         Resend OTP
       </div> 
     :
-      <div className="text-gray-500 text-sm">
+      <div className="opacity-70 text-[12px]">
         Resend OTP in {formatTime(timer)} if you haven't received it yet.
       </div>
     }

@@ -3,13 +3,17 @@
 import Left_section from '@/components/left_section';
 import React from 'react'
 import Image from 'next/image';
-import send_btn from "../assets/send_arrow.png"
 import "./verify-otp.css"
 import OTPInput from '@/components/otp-input';
+import close from "../assets/close.svg"
+import arrow from "../assets/continue_arrow.svg"
 
 export default function Verify_otp() {
   return (
     <div className='bg-white flex flex-row verify_section'>
+      <button className='close-btn'>
+        <Image src={close} alt='close' className='cursor-pointer' width={20}/>
+      </button>
       <div className='left_section'>
         <Left_section/>
       </div>
@@ -19,9 +23,9 @@ export default function Verify_otp() {
         <div className="otp-container">
           <OTPInput/>
         </div>
-        <a href="/premium"><button className='flex flex-row items-center gap-3 cont_btn'>
-          Continue
-          <Image src={send_btn} alt='send' width={25}></Image>
+        <a href="/questions"><button className='flex flex-row items-center gap-3 cont_btn'>
+          Verify OTP
+          <Image src={arrow} alt='send' width={25}></Image>
         </button></a>
       </div>
     </div>

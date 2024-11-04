@@ -6,6 +6,7 @@
 .note_img{
     width: 387px;
     height: 520px;
+    border-radius: 12px 0 0 12px;
 }
 
 .left_nav{

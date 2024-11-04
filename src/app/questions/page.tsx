@@ -4,12 +4,16 @@ import Left_section from '@/components/left_section';
 import React from 'react'
 import Image from 'next/image';
 import send_btn from "../assets/send_arrow.png"
-import "./premium.css"
+import "./questions.css"
 import Questionnaire from '@/components/questionnaire';
+import close from "../assets/close.svg"
 
-export default function Premium() {
+export default function Questions() {
   return (
-    <div className='bg-white flex flex-row'>
+    <div className='bg-white flex flex-row ques_section'>
+      <button className='close-btn'>
+        <Image src={close} alt='close' className='cursor-pointer' width={20}/>
+      </button>
       <div className='left_section'>
         <Left_section/>
       </div>
