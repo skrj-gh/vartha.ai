@@ -20,7 +20,6 @@ import goal_tracking from "./assets/goal_tracking.png"
 import go_btn from "./assets/go_btn.png"
 import ext_send_btn from "./assets/ext_send_btn.png"
 import ext_send_btn_lower from "./assets/ext_sent_btn_lower.png"
-import { useRef } from "react";
 
 export default function Home() {
 
@@ -51,7 +50,7 @@ export default function Home() {
         <div className="hero_text">
           <h4>DISCOVER VARTHA.AI</h4>
           <h2>Effortlessly learn and <br />retain the most relevant <br />current affairs.</h2>
-          <h5>Join us in building the premier current affairs <br />platform for India's next billion users. Request early <br />access with just your phone number.</h5>
+          <h5>Join us in building the premier current affairs <br />platform for India&apos;s next billion users. Request early <br />access with just your phone number.</h5>
           <div className="input-container">
             <span className="country-code">+91</span>
             <input type="text" placeholder="Enter your number..."/>

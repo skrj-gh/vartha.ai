@@ -22,7 +22,7 @@ export default function Join_waitlist() {
             <Image src={send_btn} alt="Send" style={{width: "2vw", height:"2vw"}}/>
           </button>
         </div>
-        <p>You'll be recieving a code on this number!</p>
+        <p>You&apos;ll be recieving a code on this number!</p>
         <a href="/verify-otp"><button className='flex flex-row items-center gap-3 cont_btn'>
           Continue
           <Image src={send_btn} alt='send' width={25}></Image>

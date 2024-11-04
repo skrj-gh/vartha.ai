@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import "./carousel.css"
 import person1 from "../app/assets/person1.png"
 import Image from 'next/image';
-import side_arrow from "../app/assets/side_arrow.png"
 
 const TestimonialCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -22,14 +21,6 @@ const TestimonialCarousel = () => {
       badge: "Prelims Aspirant"
     }
   ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
 
   return (
     <div className="carousel_container">

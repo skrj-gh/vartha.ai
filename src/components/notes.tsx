@@ -12,13 +12,13 @@ const NotesCarousel = () => {
     { img: "/note1.png", title: 'Self updating notes' },
   ];
 
-  const scroll = (direction: String) => {
-    if (direction === 'left') {
-      setCurrentIndex(prev => Math.max(prev - 1, 0));
-    } else {
-      setCurrentIndex(prev => Math.min(prev + 1, items.length - 1));
-    }
-  };
+  // const scroll = (direction: string) => {
+  //   if (direction === 'left') {
+  //     setCurrentIndex(prev => Math.max(prev - 1, 0));
+  //   } else {
+  //     setCurrentIndex(prev => Math.min(prev + 1, items.length - 1));
+  //   }
+  // };
 
   return (
     <div className="relative w-fit mx-auto">
