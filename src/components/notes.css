@@ -1,0 +1,50 @@
+.note_img{
+    width: 960px !important;
+    height: auto !important;
+}
+
+.notes{
+    margin: 0 auto;
+    height: auto;
+    padding: 144px 0;
+}
+
+.note_cont{
+    margin: 0 auto;
+    height: 480px;
+    width: fit-content;
+}
+
+.dot_nav{
+    width: 960px;
+    height: 44px;
+    margin: 16px auto 0;
+    font-size: 16px;
+    padding: 0 8px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 600px){
+    .note_img{
+        width: 90vw !important;
+        height: auto !important;
+    }
+
+    .dot_nav{
+        display: block;
+        padding-bottom: 2vh;
+    }
+
+    .dot_nav div{
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    .dot_nav div button{
+        width: 80vw;
+    }
+
+    .dot_nav div p{
+        width: 90vw;
+    }
+}

@@ -1,0 +1,55 @@
+.left_div{
+    width: 387px;
+    height: 520px;
+}
+
+.note_img{
+    width: 387px;
+    height: 520px;
+}
+
+.left_nav{
+    display: none;
+}
+
+.notes_cont{
+    height: fit-content;
+}
+
+@media screen and (max-width: 600px){
+    .left_div{
+        width: 100% !important;
+        height: auto;
+    }
+
+    .note_cont{
+        width: 90%;
+        margin: 0;
+    }
+
+    .note_img{
+        width: 100%;
+        /* height: auto; */
+        border-radius: 10px;
+    }
+
+    .left_nav{
+        display: flex;
+        height: 5vh;
+        padding-left: 2%;
+    }
+
+    .dot_nav_left{
+        bottom: unset;
+        width: 90%;
+        top: 3vh;
+    }
+
+    .dot_nav_left button{
+        width: 25vw;
+    }
+
+    .dot_nav_left p{
+        width: 25vw;
+    }
+}
