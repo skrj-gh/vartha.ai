@@ -16,6 +16,15 @@
     height: fit-content;
 }
 
+.dot_nav_left{
+    width: 371px;
+    left: 8px;
+}
+
+.dot_nav_left div{
+    width: 110px;
+}
+
 @media screen and (max-width: 600px){
     .left_div{
         width: 100% !important;

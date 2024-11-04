@@ -6,38 +6,48 @@
 .join_container{
     width: 957px;
     height: 520px;
+    border: solid 1px #000;
+    border-radius: 12px;
+    position: relative;
+}
+
+.closeDiv{
+    position: absolute;
+    right: 24px;
+    top: 22px;
 }
 
 .input-container {
     display: flex;
     align-items: center;
-    border: 1px solid #f5c1c1;
-    border-radius: 5px;
-    padding: 10px 15px;
-    background-color: #fdf8f8;
-    width: 35vw;
-    margin-top: 3vh;
+    border: 1px solid rgba(255,152,133,0.40);
+    border-radius: 8px;
+    padding: 0 16px;
+    background-color: #fff;
+    width: 400px;
+    height: 64px;
+    margin-top: 20px;
 }
 
 .input-container input {
     border: none;
     outline: none;
-    flex: 1;
-    font-size: 1.2vw;
-    color: #333;
-    background: none;
-    padding: 0 10px;
-    font-size: 2vw;
+    font-size: 24px;
+    padding: 8px 10px 0;
+    font-weight: 100;
+    font-family: var(--font2);
+    height: 32px;
+    width: 287px;
 }
 
 .input-container input::placeholder {
-    color: #ccc;
+    opacity: 30%;
 }
 
 .input-container .country-code {
-    font-size: 2vw;
-    color: #333;
-    margin-right: 5px;
+    font-size: 24px;
+    height: 32px;
+    width: 37px;
 }
 
 .input-container .send-button {
@@ -46,15 +56,12 @@
     cursor: pointer;
 }
 
-.input-container .send-button img {
-    width: 20px;
-    height: 20px;
-}
-
 .right_section{
     height: 520px;
     width: 570px;
-    margin: 3vw;
+    padding-left: 24px;
+    padding-top: 21px;
+    position: relative;
 }
 
 .right_section h3{
@@ -65,23 +72,26 @@
 
 .right_section h2{
     font-family: var(--font1);
-    font-size: 5vw;
-    padding-top: 7vh;
+    font-size: 32px;
+    margin-top: 40px;
+    line-height: 115%;
 }
 
 .right_section p{
-    font-size: 1vw;
-    padding-top: 2vh;
+    font-size: 14px;
+    padding-top: 12px;
     font-family: var(--font2);
+    color: #2D2F3C;
 }
 
 .cont_btn{
     background-color: #E57283;
-    padding: 8px 14px;
-    border-radius: 5px;
+    padding: 12px 16px;
+    border-radius: 7px;
     color: white;
     position: absolute;
-    bottom: 2vh;
+    bottom: 24px;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 600px){
