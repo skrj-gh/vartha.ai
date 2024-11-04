@@ -3,10 +3,10 @@ import React, { useState, useRef, useEffect } from 'react';
 const OTPInput = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
   const [timer, setTimer] = useState(60);
-  const [phoneNumber, setPhoneNumber] = useState('+91 98765 43210');
+  const [phoneNumber, setPhoneNumber] = useState("");
   
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
-
+  setPhoneNumber("+91 98765 43210")
   useEffect(() => {
     if (timer > 0) {
       const interval = setInterval(() => {
