@@ -22,9 +22,10 @@ export default function Questions() {
         <h2>Get free premium <br />access for a year!</h2>
         <Questionnaire/>
         <a href="https://www.google.com"><button className='flex flex-row items-center gap-3 cont_btn'>
-          Continue
+          Join Waitlist
           <Image src={send_btn} alt='send' width={25}></Image>
         </button></a>
+        <button className='skip_btn'>Skip</button>
       </div>
     </div>
   )

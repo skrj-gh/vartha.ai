@@ -21,11 +21,11 @@ const NotesCarousel = () => {
   // };
 
   return (
-    <div className="relative w-fit mx-auto">
+    <div className="relative w-fit mx-auto notes_sect">
       <div className="overflow-hidden">
         <div 
           className="flex transition-transform duration-300 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          style={{ transform: `translateX(${currentIndex * (window.innerWidth >= 1200 ? -100 : -94)}%)` }}
         >
           {items.map((item, index) => (
             <div

@@ -34,17 +34,22 @@
     gap: 120px;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1200px){
     .carousel_container{
-        width: 80vw;
         background: none;
+        width: 326px;
     }
     
     .carousel_element{
-        width: 70vw;
+        width: 326px;
     }
 
     .testimonial_text{
-        font-size: 5vw;
+        font-size: 29px;
+    }
+    
+    .testimonial_head{
+        width: 176px;
+        height: 52px;
     }
 }

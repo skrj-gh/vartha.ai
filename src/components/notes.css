@@ -24,27 +24,44 @@
     font-weight: 600;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1200px){
+    .notes_sect{
+        width: 390px;
+    }
+
     .note_img{
-        width: 90vw !important;
-        height: auto !important;
-    }
-
-    .dot_nav{
-        display: block;
-        padding-bottom: 2vh;
-    }
-
-    .dot_nav div{
-        width: 80vw;
+        width: 342px !important;
+        height: 480px !important;
         margin: 0 auto;
     }
 
-    .dot_nav div button{
-        width: 80vw;
+    .notes_cont{
+        width: 366px;
+        margin: 0 auto;
     }
 
-    .dot_nav div p{
-        width: 90vw;
+    .notes{
+        padding: 12px 0;
+    }
+
+    .dot_nav{
+        width: 366px;
+        height: 224px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 12px 0;
+        margin: 0;
+        text-align: start;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .dot_nav div{
+        height: 44px;
+    }
+
+    .dot_nav button{
+        width: 326px;
     }
 }

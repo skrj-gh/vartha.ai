@@ -28,7 +28,7 @@ const TestimonialCarousel = () => {
       <div className="overflow-hidden">
         <div 
           className="flex testimonial_cont transition-transform duration-300 ease-in-out"
-          style={{ transform: `translateX(-${currentSlide * 50}%)` }}
+          style={{ transform: `translateX(${currentSlide * (window.innerWidth >= 1200 ? -50 : -136)}%)` }}
         >
           {testimonials.map((testimonial, index) => (
             <div
@@ -58,7 +58,9 @@ const TestimonialCarousel = () => {
                 <p className="mb-[20px] testimonial_text">"{testimonial.text}"</p>
 
                 {/* Badge */}
-                <div className="flex flex-row gap-[8px] items-center px-[20px] py-[12px] rounded-full border-2 border-gray-400 text-[20px] text-gray-600 bg-[#F9F5F5] w-[220px] justify-center">
+                <div className="flex flex-row gap-[8px] items-center px-[20px] py-[12px] rounded-full border-2 border-gray-400 text-[20px] text-black bg-[#F9F5F5] w-[220px] justify-center"
+                  style={{fontFamily: "'libre-caslon-text', sans-serif"}}
+                >
                     {testimonial.badge}
                     <ChevronRight className="w-5 h-5 text-gray-400" />
                 </div>
@@ -68,7 +70,7 @@ const TestimonialCarousel = () => {
       </div>
 
         {/* Slide indicators */}
-        {/* <div className="flex justify-center gap-2 mt-4">
+        <div className="flex justify-center gap-2 mt-4">
             {testimonials.map((_, index) => (
             <button
                 key={index}
@@ -78,7 +80,7 @@ const TestimonialCarousel = () => {
                 }`}
             />
             ))}
-        </div> */}
+        </div>
     </div>
   );
 };

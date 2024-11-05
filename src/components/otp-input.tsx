@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import "../app/verify-otp/verify-otp.css"
 
 const OTPInput = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
@@ -46,7 +47,7 @@ const OTPInput = () => {
 
   return (
     <div className="pt-[20px]">
-      <div className="mb-[12px]">
+      <div className="mb-[12px] edit_phone">
         OTP sent to {phoneNumber}. 
         <a href='/join-waitlist' className="ml-1 cursor-pointer underline">Edit number here</a>
       </div>

@@ -45,18 +45,57 @@
     border-radius: 5px;
     color: white;
     position: absolute;
-    bottom: 2vh;
+    bottom: 24px;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1200px){
     .verify_section{
-        width: 100vw;
+        width: 366px;
         display: block;
+        position: relative;
         margin: 0 auto;
+        border: none;
+    }
+
+    .close-btn{
+        display: none;
+    }
+
+    .right_section{
+        width: 366px;
+        margin: 0 auto;
+        padding: 20px 12px;
+    }
+
+    .right_section h3{
+        font-size: 16px;
+    }
+
+    .right_section h2{
+        font-size: 32px;
+    }
+
+    .edit_phone{
+        font-size: 15px;
     }
 
     .left_section{
-        width: 100vw;
+        height: fit-content;
+        width: 366px;
         margin: 0 auto;
+    }
+
+    .right_section p{
+        font-size: 14px;
+    }
+
+    .cont_btn{
+        padding: 12px 16px;
+        display: flex;
+        justify-content: center;
+        color: white;
+        position: absolute;
+        bottom: 34px;
+        width: 342px;
     }
 }

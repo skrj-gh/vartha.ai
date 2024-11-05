@@ -30,7 +30,7 @@ export default function Home() {
     
     <div className="home_page">
       <nav className="flex flex-row justify-between items-center" style={{height: "90px", width: "1200px", margin: "0 auto"}}>
-        <div className="flex flex-row items-center" style={{width: "127px"}}>
+        <div className="flex flex-row items-center" id="log_div" style={{width: "127px"}}>
           <Image src={logo} alt="head" style={{height: "32px", width: "32px", borderRadius: "50%"}}></Image>
           <h4 style={{fontFamily: "'libre-caslon-text', sans-serif", paddingLeft: "8px", fontSize: "24px"}}>vartha.ai</h4>
         </div>
@@ -42,7 +42,8 @@ export default function Home() {
         <a href="/join-waitlist">
         <div>
           <button className="join_waitlist_btn">JOIN WAITLIST</button>
-        </div></a>
+        </div>
+        </a>
       </nav>
       <div className="hero_section_wrapper">
 
@@ -136,6 +137,7 @@ export default function Home() {
             <div className="footer_join">
               <h3>Revise and learn the most relevant current affairs.</h3>
               <div className="flex flex-row items-center gap-2 mt-4" id="in_join_btn_lower">
+                <span className="lower-country-code">+91</span>
                 <input type="tel" placeholder="Enter phone number..." />
                 <a href="/join-waitlist">
                 <button className="flex flex-row justify-between">Join Waitlist<Image src={send_btn} alt="send" style={{width: "24px"}}></Image></button></a>
@@ -164,7 +166,7 @@ export default function Home() {
         </div>
       </section>
       <div className="cprt flex flex-row justify-between">
-        <h6>&copy; 2024 Vartha AI. All rights reserved</h6>
+        <h6 id="cprt_date">&copy; 2024 Vartha AI. All rights reserved</h6>
         <h6>Terms &amp; Conditions</h6>
       </div>
     </div>
