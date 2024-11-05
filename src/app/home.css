@@ -450,7 +450,6 @@
         height: 884px;
         padding: 0 20px;
         margin: 0 auto;
-        margin-top: 32px;
         background-image: url("../app/assets/mobile_hero_blur_1.svg"),  url("../app/assets/mobile_hero_blur_2.svg");
         background-position:center bottom, center bottom;
         border-radius: 12px;

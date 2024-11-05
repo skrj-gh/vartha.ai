@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import "./carousel.css"
 import person1 from "../app/assets/person1.png"
@@ -6,6 +7,27 @@ import Image from 'next/image';
 
 const TestimonialCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Handle initial check
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1200);
+    };
+    
+    // Check on mount
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const getTranslateX = () => {
+    return `translateX(${currentSlide * (isMobile ? -136 : -50)}%)`;
+  };
   
   const testimonials = [
     {
@@ -28,7 +50,7 @@ const TestimonialCarousel = () => {
       <div className="overflow-hidden">
         <div 
           className="flex testimonial_cont transition-transform duration-300 ease-in-out"
-          style={{ transform: `translateX(${currentSlide * (window.innerWidth >= 1200 ? -50 : -136)}%)` }}
+          style={{ transform: getTranslateX() }}
         >
           {testimonials.map((testimonial, index) => (
             <div
@@ -58,7 +80,7 @@ const TestimonialCarousel = () => {
                 <p className="mb-[20px] testimonial_text">"{testimonial.text}"</p>
 
                 {/* Badge */}
-                <div className="flex flex-row gap-[8px] items-center px-[20px] py-[12px] rounded-full border-2 border-gray-400 text-[20px] text-black bg-[#F9F5F5] w-[220px] justify-center"
+                <div className="flex flex-row gap-[8px] items-center px-[20px] py-[12px] rounded-full border-2 border-gray-400 text-[20px] text-black bg-[#F9F5F5] w-[230px] justify-center"
                   style={{fontFamily: "'libre-caslon-text', sans-serif"}}
                 >
                     {testimonial.badge}

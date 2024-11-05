@@ -1,9 +1,31 @@
-import React, { useState } from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import "./notes.css"
 
 const NotesCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Handle initial check
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1200);
+    };
+    
+    // Check on mount
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const getTranslateX = () => {
+    return `translateX(${currentIndex * (isMobile ? -94 : -100)}%)`;
+  };
   
   const items = [
     { img: "/note1.png", title: 'Self updating notes' },
@@ -25,7 +47,7 @@ const NotesCarousel = () => {
       <div className="overflow-hidden">
         <div 
           className="flex transition-transform duration-300 ease-in-out"
-          style={{ transform: `translateX(${currentIndex * (window.innerWidth >= 1200 ? -100 : -94)}%)` }}
+          style={{ transform: getTranslateX() }}
         >
           {items.map((item, index) => (
             <div
