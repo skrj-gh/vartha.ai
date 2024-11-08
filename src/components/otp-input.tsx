@@ -1,11 +1,37 @@
 import React, { useState, useRef, useEffect } from 'react';
 import "../app/verify-otp/verify-otp.css"
 
-const OTPInput = () => {
+const OTPInput = ({phone, onClose}: any) => {
   const [otp, setOtp] = useState(['', '', '', '']);
   const [timer, setTimer] = useState(60);
-  // const [phoneNumber, setPhoneNumber] = useState("");
-  const phoneNumber = "+91 98765 43210"
+
+  const handleOtpSubmit = async () => {
+    if (!otp) {
+      alert('Please enter the OTP');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/verify-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ phone, otp }),
+      });
+
+      if (response.ok) {
+        alert('OTP verified successfully!');
+        setOtp(['', '', '', '']);
+        onClose(); // Close the modal
+      } else {
+        alert('Invalid OTP. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error verifying OTP:', error);
+      alert('Failed to verify OTP');
+    }
+  };
   
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   useEffect(() => {
@@ -48,7 +74,7 @@ const OTPInput = () => {
   return (
     <div className="pt-[20px]">
       <div className="mb-[12px] edit_phone">
-        OTP sent to {phoneNumber}. 
+        OTP sent to {phone}. 
         <a href='/join-waitlist' className="ml-1 cursor-pointer underline">Edit number here</a>
       </div>
       

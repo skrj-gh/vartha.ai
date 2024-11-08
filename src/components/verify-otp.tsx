@@ -5,8 +5,8 @@ import React from 'react'
 import Image from 'next/image';
 import "./verify-otp.css"
 import OTPInput from '@/components/otp-input';
-import close from "../assets/close.svg"
-import arrow from "../assets/continue_arrow.svg"
+import close from "../app/assets/close.svg"
+import arrow from "../app/assets/continue_arrow.svg"
 
 export default function Verify_otp({ phone, onClose }: any) {
   return (
