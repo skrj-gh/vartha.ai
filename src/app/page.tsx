@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Image from "next/image";
 import logo from "./assets/vartha_logo.png"
-import phone from "./assets/phone.png"
+import phoneImg from "./assets/phone.png"
 import send_btn from "./assets/send_arrow.png"
 import down_arrow from "./assets/down_arrow.png"
 import quiz from "./assets/quiz.png" 
@@ -20,8 +20,38 @@ import goal_tracking from "./assets/goal_tracking.png"
 import go_btn from "./assets/go_btn.png"
 import ext_send_btn from "./assets/ext_send_btn.png"
 import ext_send_btn_lower from "./assets/ext_sent_btn_lower.png"
+import { useState } from "react";
 
 export default function Home() {
+
+  const [phone, setPhone] = useState('');
+
+  const handleSubmit = async (e:any) => {
+    e.preventDefault();
+    if (!phone) {
+      alert('Please enter a Phone Number');
+      return;
+    }
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ phone }),
+      });
+
+      if (response.ok) {
+        
+      } else {
+        alert('Failed to add to waitlist');
+      }
+    
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong');
+    }
+  };
 
 
   return (
@@ -54,19 +84,19 @@ export default function Home() {
           <h5>Join us in building the premier current affairs <br />platform for India&apos;s next billion users. Request early <br />access with just your phone number.</h5>
           <div className="input-container">
             <span className="country-code">+91</span>
-            <input type="text" placeholder="Enter your number..."/>
-            <a href="/join-waitlist"><button className="send-button">
+            <input type="tel" maxLength={10} value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter your number..."/>
+            <button className="send-button" onClick={(e) => handleSubmit(e)}>
               <Image src={send_btn} alt="Send"/>
-            </button></a>
+            </button>
           </div>
-          <a href="/join-waitlist"><button className="ext_join_btn">
+          <button className="ext_join_btn" onClick={(e) => handleSubmit(e)}>
             Join Waitlist
             <Image src={ext_send_btn} alt="Send"/>
-          </button></a>
+          </button>
           <h6>Start for free. No Credit Card Required!</h6>
           <p>SCROLL DOWN</p>
         </div>
-        <Image src={phone} alt="phone" className="hero_phone z-0"></Image>
+        <Image src={phoneImg} alt="phone" className="hero_phone z-0"></Image>
       </section>
       </div>
       <div className="scroll_div relative z-20"><Image src={down_arrow} alt="scroll" height={20}/></div>
@@ -138,14 +168,13 @@ export default function Home() {
               <h3>Revise and learn the most relevant current affairs.</h3>
               <div className="flex flex-row items-center gap-2 mt-4" id="in_join_btn_lower">
                 <span className="lower-country-code">+91</span>
-                <input type="tel" placeholder="Enter phone number..." />
-                <a href="/join-waitlist">
-                <button className="flex flex-row justify-between">Join Waitlist<Image src={send_btn} alt="send" style={{width: "24px"}}></Image></button></a>
+                <input type="tel" maxLength={10} value={phone} onChange={(e) => setPhone(e.target.value)}placeholder="Enter phone number..." />
+                <button className="flex flex-row justify-between" onClick={(e) => handleSubmit(e)}>Join Waitlist<Image src={send_btn} alt="send" style={{width: "24px"}}></Image></button>
               </div>
-              <a href="/join-waitlist"><button className="ext_join_btn_lower">
+              <button className="ext_join_btn_lower" onClick={(e) => handleSubmit(e)}>
                 Join Waitlist
                 <Image src={ext_send_btn_lower} alt="Send"/>
-              </button></a>
+              </button>
               <hr className="opacity-30"/>
             </div>
             <div className="footer_contacts">

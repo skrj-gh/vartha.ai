@@ -10,7 +10,7 @@
 }
 
 .home_page{
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -162,7 +162,7 @@
 
 .details{
     margin: 0 auto;
-    width: 1416px;
+    max-width: 1416px;
     padding-bottom: 144px;
     background-color: transparent;
     background-image: url("../app//assets/Intersect.png");
@@ -249,7 +249,7 @@
     height: 830px;
     background-color: white;
     border-radius: 10px;
-    width: 1416px;
+    max-width: 1416px;
 }
 
 .footer{
@@ -401,6 +401,11 @@
 
 
 @media screen and (max-width: 1200px){
+
+    .top_page{
+        overflow-x: scroll !important;
+    }
+
     .home_page{
         width: 390px;
     }
