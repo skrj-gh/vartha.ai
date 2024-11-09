@@ -26,7 +26,7 @@ export default function Home() {
 
   const [phone, setPhone] = useState('');
 
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e:React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     if (!phone) {
       alert('Please enter a Phone Number');
